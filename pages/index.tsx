@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { getMessaging, getToken } from 'firebase/messaging'
-import { messaging } from '../src/lib/firebase'
+import { app, messaging } from '../src/lib/firebase'
 
 export default function Home() {
     function requestPermission() {
@@ -11,7 +11,7 @@ export default function Home() {
             }
         })
 
-        const messaging = getMessaging()
+        const messaging = getMessaging(app)
         getToken(messaging, { vapidKey: 'BKIVHHmhVEKzCmMy9ukLTjhfuAlluEyJabTl4RTVFTm4FZOMMGbJBX6TE26LgMEcsZisU4W2LDvNpK42hliOsM8' })
             .then((currentToken) => {
                 if (currentToken) {
