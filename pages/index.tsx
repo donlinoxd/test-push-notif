@@ -1,8 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { getMessaging, getToken } from 'firebase/messaging'
 import { app, messaging } from '../src/lib/firebase'
 
 export default function Home() {
+    const [w, setW] = useState<any>()
+
     function requestPermission() {
         console.log('Requesting permission...')
         Notification.requestPermission().then((permission) => {
@@ -32,8 +34,13 @@ export default function Home() {
     }
 
     useEffect(() => {
-        requestPermission()
-    }, [])
+        setW(window)
+
+        if (w) {
+            console.log(w)
+            requestPermission()
+        }
+    }, [window, w])
 
     return (
         <div>
