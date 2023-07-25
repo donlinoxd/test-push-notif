@@ -1,5 +1,3 @@
-'use client'
-
 import { useEffect, useState } from 'react'
 import { getMessaging, getToken } from 'firebase/messaging'
 import { app, messaging } from '../src/lib/firebase'
