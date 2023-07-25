@@ -14,7 +14,7 @@ export default function Home() {
         })
 
         const messaging = getMessaging(app)
-        getToken(messaging, { vapidKey: 'BKIVHHmhVEKzCmMy9ukLTjhfuAlluEyJabTl4RTVFTm4FZOMMGbJBX6TE26LgMEcsZisU4W2LDvNpK42hliOsM8' })
+        getToken(messaging, { vapidKey: 'BNUXABuRKhjdi74AzmqX19gbBG7dx-60kr1UdbymgKDk4Uf9il7KJjVTYDCMhW_SsAG4IfNIlEXUt12AGHKe5hc' })
             .then((currentToken) => {
                 if (currentToken) {
                     // Send the token to your server and update the UI if necessary
