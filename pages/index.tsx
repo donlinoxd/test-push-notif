@@ -6,14 +6,14 @@ import { app, messaging } from '../src/lib/firebase'
 
 export default function Home() {
     function requestPermission() {
-        console.log('Requesting permission...')
-        Notification.requestPermission().then((permission) => {
-            if (permission === 'granted') {
-                console.log('Notification permission granted.')
-            }
-        })
-
         if (typeof window !== 'undefined') {
+            console.log('Requesting permission...')
+            Notification.requestPermission().then((permission) => {
+                if (permission === 'granted') {
+                    console.log('Notification permission granted.')
+                }
+            })
+
             const messaging = getMessaging(app)
             getToken(messaging, { vapidKey: 'BNUXABuRKhjdi74AzmqX19gbBG7dx-60kr1UdbymgKDk4Uf9il7KJjVTYDCMhW_SsAG4IfNIlEXUt12AGHKe5hc' })
                 .then((currentToken) => {
