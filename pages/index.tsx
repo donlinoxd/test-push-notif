@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { getMessaging, getToken } from 'firebase/messaging'
 import { app, messaging } from '../src/lib/firebase'
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, GetStaticProps } from 'next'
 
 export default function Home() {
     function requestPermission() {
@@ -49,7 +49,7 @@ export default function Home() {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
     return {
         props: {},
     }
