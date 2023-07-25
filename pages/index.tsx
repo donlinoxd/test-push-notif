@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getMessaging, getToken } from 'firebase/messaging'
-import { app, messaging } from '../src/lib/firebase'
+import { app } from '../src/lib/firebase'
 import { GetServerSideProps, GetStaticProps } from 'next'
 
 export default function Home() {
@@ -12,8 +12,8 @@ export default function Home() {
                     console.log('Notification permission granted.')
                 }
             })
-
             const messaging = getMessaging(app)
+
             getToken(messaging, { vapidKey: 'BNUXABuRKhjdi74AzmqX19gbBG7dx-60kr1UdbymgKDk4Uf9il7KJjVTYDCMhW_SsAG4IfNIlEXUt12AGHKe5hc' })
                 .then((currentToken) => {
                     if (currentToken) {
