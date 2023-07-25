@@ -5,7 +5,7 @@ import { messaging } from '../src/lib/firebase'
 export default function Home() {
     function requestPermission() {
         console.log('Requesting permission...')
-        Notification.requestPermission().then((permission) => {
+        window?.Notification.requestPermission().then((permission) => {
             if (permission === 'granted') {
                 console.log('Notification permission granted.')
             }
