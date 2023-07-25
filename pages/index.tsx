@@ -31,7 +31,7 @@ export default function Home() {
     }
 
     useEffect(() => {
-        if (window) requestPermission()
+        requestPermission()
     }, [])
 
     return (
