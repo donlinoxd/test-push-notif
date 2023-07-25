@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { getMessaging, getToken } from 'firebase/messaging'
 import { app, messaging } from '../src/lib/firebase'
+import { GetServerSideProps } from 'next'
 
 export default function Home() {
     function requestPermission() {
@@ -46,4 +47,10 @@ export default function Home() {
             <h1>Push Notification</h1>
         </div>
     )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    return {
+        props: {},
+    }
 }
